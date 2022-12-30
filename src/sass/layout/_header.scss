@@ -25,6 +25,13 @@
     }
 }
 
+.img-logo{
+    width: 3rem;
+    margin-top: 1.5rem;
+    position: absolute;
+    left: 2rem;
+    cursor: pointer;
+}
 
 .dark-mode{
     @include m.neo(.4rem , 100%, false);
