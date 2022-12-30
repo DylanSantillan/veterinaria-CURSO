@@ -1,10 +1,9 @@
 @use '../utilities/mixins' as m;
 @use '../utilities/variables' as v;
 
-.conteiner-form{
+.form-section{
 
     padding: 2rem 1.5rem 0 1.5rem;
-    font-family: v.$f-principal;
     @include m.media( 925px ){
         width: 50%;
         padding: 0 1.5rem 0 1.5rem;
@@ -22,16 +21,17 @@
     
     &__sub-title--span{
         color: v.$c-celeste;
-        
     }
 }
 
+
+
 .form{
-    border-radius: 1rem;
-    padding: 2rem;
-    overflow: hidden;
     @include m.neo(.4rem , 100%, false);
     font-size: 1rem;
+    padding: 2rem;
+    overflow: hidden;
+    border-radius: 1rem;
 
     body.dark &{
         @include m.neoD(.2rem , 100%, false);
@@ -39,32 +39,22 @@
     
 }
 
-.form__button{
-    @include m.button(v.$c-celeste, v.$c-celeste-oscuro);
-    @include m.neo(.3rem , 100%, false);
-    margin-top: 1.5rem;
-    
-    body.dark & {
-        @include m.neoD(.2rem , 100%, false);
-    }
-}
-
-.conteiner-input{
+.dato-conteiner{
 
     margin-bottom: 1rem;
     
     &__label{
-        margin-bottom: 1rem;
-        text-transform: uppercase;
         font-weight: 600; 
+        text-transform: uppercase;
+        margin-bottom: 1rem;
     }
     &__input{
         @include m.neo(.2rem , 100%, true);
         padding: 1rem .9rem;
         width: 100%;
         border-radius: .8rem;
-        resize: none;
         outline: none;
+        resize: none;
         transition: all .5s ease-in;
 
         body.dark &{
@@ -74,14 +64,15 @@
         &:hover{
             @include m.neo(.1rem , 100%, true);
         }
-
-        &[type='date']::-webkit-calendar-picker-indicator {
-            color: red;
-        }
-
     }
 }
 
-input[type='date']::-webkit-calendar-picker-indicator {
-    color: red;
+.form__button{
+    @include m.neo(.3rem , 100%, false);
+    @include m.button(v.$c-celeste, v.$c-celeste-oscuro);
+    margin-top: 1.5rem;
+    
+    body.dark & {
+        @include m.neoD(.2rem , 100%, false);
+    }
 }

@@ -1,15 +1,15 @@
 @use '../utilities/mixins' as m;
 @use '../utilities/variables' as v;
 
-.conteiner-paciente{
+.paciente-conteiner{
 
     @include m.neo(.4rem , 100%, false);
-    border-radius: 1rem;
-    border: 3px solid v.$c-blanco;
-    padding: 2rem;
-    overflow: hidden;
-    font-size: 1rem;
     margin-bottom: 3rem;
+    font-size: 1rem;
+    padding: 2rem;
+    border: 3px solid v.$c-blanco;
+    border-radius: 1rem;
+    overflow: hidden;
     
     body.dark & {
         @include m.neoD(.4rem , 100%, false);
@@ -29,7 +29,7 @@
 }
 
 
-.conteiner-buttons{
+.btn-paciente{
 
     @include m.media( 640px ){
         display: grid;

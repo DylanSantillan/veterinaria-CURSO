@@ -1,7 +1,7 @@
 const Error = () => {
     return (
-      <div className="conteiner-error">
-        <p className="conteiner-error__mensaje">
+      <div className="error-conteiner">
+        <p className="error-conteiner__mensaje">
           Todos los mensajes son obligatorios
         </p>
       </div>

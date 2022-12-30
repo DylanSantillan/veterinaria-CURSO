@@ -10,37 +10,37 @@ const Paciente = ({paciente, setPaciente, eliminarPaciente}) => {
     }
   
     return (
-        <div className="conteiner-paciente">
-            <p className="conteiner-paciente__dato">Nombre: {''}
-                <span className="conteiner-paciente__dato--span">{nombre}</span>
+        <div className="paciente-conteiner">
+            <p className="paciente-conteiner__dato">Nombre: {''}
+                <span className="paciente-conteiner__dato--span">{nombre}</span>
             </p>
   
-            <p className="conteiner-paciente__dato">Propietario: {''}
-                <span className="conteiner-paciente__dato--span">{propietario}</span>
+            <p className="paciente-conteiner__dato">Propietario: {''}
+                <span className="paciente-conteiner__dato--span">{propietario}</span>
             </p>
   
-            <p className="conteiner-paciente__dato">Email: {''}
-                <span className="conteiner-paciente__dato--span">{email}</span>
+            <p className="paciente-conteiner__dato">Email: {''}
+                <span className="paciente-conteiner__dato--span">{email}</span>
             </p>
   
-            <p className="conteiner-paciente__dato">Fecha Alta: {''}
-                <span className="conteiner-paciente__dato--span">{fecha}</span>
+            <p className="paciente-conteiner__dato">Fecha Alta: {''}
+                <span className="paciente-conteiner__dato--span">{fecha}</span>
             </p>
   
-            <p className="conteiner-paciente__dato">Síntomas: {''}
-                <span className="conteiner-paciente__dato--span">{sintomas}</span>
+            <p className="paciente-conteiner__dato">Síntomas: {''}
+                <span className="paciente-conteiner__dato--span">{sintomas}</span>
             </p>
   
-            <div className="conteiner-buttons">
+            <div className="btn-paciente">
                 <button 
                     type="button"
-                    className="conteiner-buttons__editar"
+                    className="btn-paciente__editar"
                     onClick={() => setPaciente(paciente)}
                 >Editar</button>
   
                 <button 
                     type="button"
-                    className="conteiner-buttons__eliminar"
+                    className="btn-paciente__eliminar"
                     onClick={handleEliminar}
                 >Eliminar</button>
             </div>

@@ -6,13 +6,12 @@
     position: relative;
 }
 
-.conteiner-img{
+.cat-conteiner{
+    @include m.flex(row, nowrap, center, flex-end);
     background-color: v.$c-celeste;
     height: 35vh;
-    @include m.flex(row, nowrap, center, flex-end);
-    transition: all 1s;
     
-    &__cat-dark{
+    &__gato{
         display: block;
         height: auto;
         max-width: 100%;
@@ -23,38 +22,19 @@
             width: 80%;
         }
         
-        body.dark &{
-            display: none;
-            
-        }
-        
-    }
-    &__cat-light{
-        display: none;
-        height: auto;
-        max-width: 100%;
-        transition: all .5s;
-        
-        @include m.media(430px){
-            max-width: 27rem;
-            width: 80%;
-        }
-
-        body.dark &{
-            display: block;
-        }
     }
 }
 
+
 .dark-mode{
+    @include m.neo(.4rem , 100%, false);
+    background-color: v.$c-blanco;
+    padding: 1rem .9rem;
+    margin-top: 1.5rem;
     position: absolute;
     right: 2rem;
-    padding: 1rem .9rem;
-    border-radius: .8rem;
-    background-color: v.$c-blanco;
     cursor: pointer;
-    @include m.neo(.4rem , 100%, false);
-    margin-top: 1.5rem;
+    border-radius: .8rem;
     transition: all .3s;
 
     body.dark & {
@@ -68,44 +48,31 @@
         transform: scale(.98);
     }
 
-    &__sun{
-        display: none;
-        
-        body.dark &{
-            display: block;
-        }
+    &__icon{
+        width: auto;
     }
-
-    &__moon{
-        display: block;
-        
-        body.dark &{
-            display: none;
-        }
-    }  
 }
 
 .conteiner-info{
 
-    padding: 2rem 1.5rem 2rem 1.5rem;
     @include m.flex(column, nowrap, center, center);
+    padding: 2rem 1.5rem 2rem 1.5rem;
     height: 65vh;
     
     &__title{
-        margin: 2rem 0 4rem 0;
-        font-family: v.$f-secundaria;
         @include m.title( 700, 1.5rem , center );
+        font-family: v.$f-secundaria;
+        margin: 2rem 0 4rem 0;
         
         &--span{
-            display: block;
             color: v.$c-celeste;
             font-size: 2.9rem;
+            display: block;
         }
     }
     
     &__huellas{
         width: 5rem;
-        margin: 0 auto 0 auto;
-        margin-bottom: 2rem;
+        margin: 0 auto 2rem auto;
     }
 }

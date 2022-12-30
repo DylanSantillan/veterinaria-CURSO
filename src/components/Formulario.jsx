@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Error from './Error';
 
 const Formulario = ({ pacientes, setPacientes, paciente, setPaciente }) => {
+
     const [nombre, setNombre] = useState('');
     const [propietario, setPropietario] = useState('');
     const [email, setEmail] = useState('');
@@ -20,9 +21,7 @@ const Formulario = ({ pacientes, setPacientes, paciente, setPaciente }) => {
         }
     }, [paciente])
 
-
-    
-
+    /* generador de id */
     const generarId = () => {
         const random = Math.random().toString(36).substr(2);
         const fecha = Date.now().toString(36)
@@ -32,7 +31,7 @@ const Formulario = ({ pacientes, setPacientes, paciente, setPaciente }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Validación del Formulario
+        /* Validación del Formulario */
         if( [ nombre, propietario, email, fecha, sintomas ].includes('') ) {
             console.log('Hay Al Menos un campo vacio')
 
@@ -79,81 +78,81 @@ const Formulario = ({ pacientes, setPacientes, paciente, setPaciente }) => {
     }
 
     return (
-        <div className="conteiner-form">
-            <h2 className="conteiner-form__title">Seguimiento Pacientes</h2>
+        <div className="form-section">
+            <h2 className="form-section__title">Seguimiento Pacientes</h2>
 
-            <h3 className="conteiner-form__sub-title">
+            <h3 className="form-section__sub-title">
                 Añade Pacientes y {''}
-                <span className="conteiner-form__sub-title--span">Administralos</span>
+                <span className="form-section__sub-title--span">Administralos</span>
             </h3>
+
 
             <form 
                 onSubmit={handleSubmit}
                 className="form"
             >
-
-                <div className="conteiner-input">
-                    <label htmlFor="mascota" className="conteiner-input__label">
+                <div className="dato-conteiner">
+                    <label htmlFor="mascota" className="dato-conteiner__label">
                         Nombre Mascota
                     </label>
                     <input
                         id="mascota"
                         type="text"
                         placeholder="Nombre de la Mascota"
-                        className="conteiner-input__input"
+                        className="dato-conteiner__input"
                         value={nombre}
                         onChange={ (e) => setNombre(e.target.value) }
                     />  
                 </div>
 
-                <div className="conteiner-input">
-                    <label htmlFor="propietario" className="conteiner-input__label">
+                <div className="dato-conteiner">
+                    <label htmlFor="propietario" className="dato-conteiner__label">
                         Nombre Propietario
                     </label>
                     <input
                         id="propietario"
                         type="text"
                         placeholder="Nombre del Propietario"
-                        className="conteiner-input__input"
+                        className="dato-conteiner__input"
                         value={propietario}
                         onChange={ (e) => setPropietario(e.target.value) }
                     />  
                 </div>
 
-                <div className="conteiner-input">
-                    <label htmlFor="email" className="conteiner-input__label">
+                <div className="dato-conteiner">
+                    <label htmlFor="email" className="dato-conteiner__label">
                         Email
                     </label>
                     <input
                         id="email"
                         type="email"
                         placeholder="Email Contacto Propietario"
-                        className="conteiner-input__input"
+                        className="dato-conteiner__input"
                         value={email}
                         onChange={ (e) => setEmail(e.target.value) }
                     />  
                 </div>
 
-                <div className="conteiner-input">
-                    <label htmlFor="alta" className="conteiner-input__label">
+                <div className="dato-conteiner">
+                    <label htmlFor="alta" className="dato-conteiner__label">
                         Alta
                     </label>
                     <input
                         id="alta"
                         type="date"
-                        className="conteiner-input__input"
+                        className="dato-conteiner__input"
                         value={fecha}
                         onChange={ (e) => setFecha(e.target.value) }
                     />  
                 </div>
 
-                <div className="conteiner-input">
-                    <label htmlFor="sintomas" className="conteiner-input__label">
+                <div className="dato-conteiner">
+                    <label htmlFor="sintomas" className="dato-conteiner__label">
                         Síntomas
                     </label>
                     <textarea 
                         id="sintomas"
-                        className="conteiner-input__input"
+                        className="dato-conteiner__input"
                         placeholder="Describe los Síntomas"
                         value={sintomas}
                         onChange={ (e) => setSintomas(e.target.value) }
@@ -168,6 +167,7 @@ const Formulario = ({ pacientes, setPacientes, paciente, setPaciente }) => {
 
                 {error && <Error /> }
             </form>
+
         </div>
     )
 }
