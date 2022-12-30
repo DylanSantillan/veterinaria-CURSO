@@ -1,0 +1,20 @@
+@use '../utilities/mixins' as m;
+@use '../utilities/variables' as v;
+
+.conteiner-app{
+
+    max-width: 1200px;
+    margin: 0 auto 0 auto;
+    background-color: v.$c-blanco;
+    transition: all .3s;
+
+    body.dark &{
+        background-color: v.$c-negro;
+    }
+
+    &__grid{
+        @include m.media( 925px ){
+            display: flex;
+        }
+    }
+}

@@ -1,0 +1,68 @@
+@use '../utilities/mixins' as m;
+@use '../utilities/variables' as v;
+
+.conteiner-paciente{
+
+    @include m.neo(.4rem , 100%, false);
+    border-radius: 1rem;
+    border: 3px solid v.$c-blanco;
+    padding: 2rem;
+    overflow: hidden;
+    font-size: 1rem;
+    margin-bottom: 3rem;
+    
+    body.dark & {
+        @include m.neoD(.4rem , 100%, false);
+        border: 3px solid v.$c-negro;
+    }
+
+    &__dato{
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        font-weight: 600; 
+    }
+    &__dato--span{
+        margin-left: .3rem;
+        text-transform: none;
+        font-weight: 400; 
+    }
+}
+
+
+.conteiner-buttons{
+
+    @include m.media( 640px ){
+        display: grid;
+        grid-template-areas: "btn1 vacio btn2";
+        grid-template-columns: 9rem 1fr 9rem;
+    }
+
+    @include m.media( 1100px ){
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    &__editar{
+        @include m.button(v.$c-celeste, v.$c-celeste-oscuro);
+        @include m.neo(.3rem , 100%, false);
+        margin-bottom: 1.5rem;
+        grid-area: btn1;
+        
+        body.dark &{
+            @include m.neoD(.3rem , 100%, false);
+        }
+        
+        @include m.media( 640px ){
+            margin: 0;
+        }
+    }
+    
+    &__eliminar{
+        @include m.button(v.$c-rojo, v.$c-rojo-oscuro);
+        @include m.neo(.3rem , 100%, false);
+        grid-area: btn2;
+
+        body.dark &{
+            @include m.neoD(.3rem , 100%, false);
+        }
+    }
+}

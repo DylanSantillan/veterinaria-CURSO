@@ -1,0 +1,27 @@
+@use '../utilities/mixins' as m;
+@use '../utilities/variables' as v;
+
+.wrapper{
+
+    min-height: 100vh;
+    padding: 3rem 1.5rem 5rem 1.5rem;
+    font-family: v.$f-principal;
+    @include m.media( 925px ){
+        width: 50%;
+        padding-top: 0;
+    }
+
+    &__title{
+        @include m.title( 700, 1.8rem , center );
+    }
+
+    &__sub-title{
+        margin: .3rem 0 3rem 0;
+        @include m.title( 500, 1.2rem , center );
+
+    }
+
+    &__sub-title--span{
+        color: v.$c-celeste;
+    }
+}

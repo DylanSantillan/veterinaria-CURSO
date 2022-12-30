@@ -1,0 +1,37 @@
+@use '../utilities/mixins' as m;
+@use '../utilities/variables' as v;
+
+.conteiner-error{
+
+    padding: 1rem .9rem;
+    width: 100%;
+    border-radius: .8rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: v.$c-blanco;
+    background-color: v.$c-rojo;
+    margin-top: 1rem;
+
+    &__mensaje{
+        color: v.$c-blanco;
+        text-align: center;
+    }
+}
+
+.error-enter {
+    opacity: 0;
+  }
+  
+  .error-enter-active {
+    opacity: 1;
+    transition: opacity 300ms ease-in-out;
+  }
+  
+  .error-exit {
+    opacity: 1;
+  }
+  
+  .error-exit-active {
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+  }
