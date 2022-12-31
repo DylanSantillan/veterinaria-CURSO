@@ -1,4 +1,4 @@
-# 1er Proyecto de curso de Udemy :nerd_face:
+# 1er Proyecto de curso de React :nerd_face:
 ## Seguimiento de pacientes
 
 **Profesor**: Juan Pablo De la torre Valdez
