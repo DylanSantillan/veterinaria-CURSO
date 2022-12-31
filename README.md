@@ -2,7 +2,9 @@
 ## Seguimiento de pacientes
 
 **Profesor**: Juan Pablo De la torre Valdez
+
 **Pagina**: [Link Veterinaria](https://santillan-veterinaria-curso.vercel.app/)
+
 **Linkedin**: [Dylan Santillán](https://www.linkedin.com/in/dylansantillan/)
 
 - **Diseño**:
